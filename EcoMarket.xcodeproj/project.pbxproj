@@ -9,14 +9,25 @@
 /* Begin PBXBuildFile section */
 		52C70F302B2A41E400052FD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C70F2F2B2A41E400052FD1 /* AppDelegate.swift */; };
 		52C70F322B2A41E400052FD1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C70F312B2A41E400052FD1 /* SceneDelegate.swift */; };
-		52C70F342B2A41E400052FD1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C70F332B2A41E400052FD1 /* ViewController.swift */; };
-		52C70F372B2A41E400052FD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52C70F352B2A41E400052FD1 /* Main.storyboard */; };
+		52C70F342B2A41E400052FD1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C70F332B2A41E400052FD1 /* HomeViewController.swift */; };
 		52C70F3A2B2A41E400052FD1 /* EcoMarket.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 52C70F382B2A41E400052FD1 /* EcoMarket.xcdatamodeld */; };
 		52C70F3C2B2A41E800052FD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52C70F3B2B2A41E800052FD1 /* Assets.xcassets */; };
 		52C70F3F2B2A41E800052FD1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52C70F3D2B2A41E800052FD1 /* LaunchScreen.storyboard */; };
 		52C70F4A2B2A41E800052FD1 /* EcoMarketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C70F492B2A41E800052FD1 /* EcoMarketTests.swift */; };
 		52C70F542B2A41E900052FD1 /* EcoMarketUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C70F532B2A41E900052FD1 /* EcoMarketUITests.swift */; };
 		52C70F562B2A41E900052FD1 /* EcoMarketUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C70F552B2A41E900052FD1 /* EcoMarketUITestsLaunchTests.swift */; };
+		52C70F682B2A431D00052FD1 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C70F672B2A431D00052FD1 /* TabBarController.swift */; };
+		52C70F742B2A46F500052FD1 /* BusketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C70F732B2A46F500052FD1 /* BusketViewController.swift */; };
+		52C70F792B2A471F00052FD1 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C70F782B2A471F00052FD1 /* HistoryViewController.swift */; };
+		52C70F7E2B2A473C00052FD1 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C70F7D2B2A473C00052FD1 /* InfoViewController.swift */; };
+		52C70F832B2A47E400052FD1 /* UIcolor + extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C70F822B2A47E400052FD1 /* UIcolor + extention.swift */; };
+		52C70F852B2A483F00052FD1 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52C70F842B2A483F00052FD1 /* Color.xcassets */; };
+		52C70F882B2A49B000052FD1 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C70F872B2A49B000052FD1 /* BaseViewController.swift */; };
+		52C70F8D2B2A4E8200052FD1 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C70F8C2B2A4E8200052FD1 /* CategoryCollectionViewCell.swift */; };
+		52C70F902B2A4EC300052FD1 /* UICollectionViewCell + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C70F8F2B2A4EC300052FD1 /* UICollectionViewCell + extension.swift */; };
+		52C70F932B2A54E100052FD1 /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C70F922B2A54E100052FD1 /* APIEndpoints.swift */; };
+		52C70F972B2A561D00052FD1 /* ProductCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C70F962B2A561D00052FD1 /* ProductCategory.swift */; };
+		52C70F9A2B2A567700052FD1 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 52C70F992B2A567700052FD1 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,8 +51,7 @@
 		52C70F2C2B2A41E400052FD1 /* EcoMarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EcoMarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52C70F2F2B2A41E400052FD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52C70F312B2A41E400052FD1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		52C70F332B2A41E400052FD1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		52C70F362B2A41E400052FD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		52C70F332B2A41E400052FD1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		52C70F392B2A41E400052FD1 /* EcoMarket.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EcoMarket.xcdatamodel; sourceTree = "<group>"; };
 		52C70F3B2B2A41E800052FD1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52C70F3E2B2A41E800052FD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +61,17 @@
 		52C70F4F2B2A41E900052FD1 /* EcoMarketUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EcoMarketUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		52C70F532B2A41E900052FD1 /* EcoMarketUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcoMarketUITests.swift; sourceTree = "<group>"; };
 		52C70F552B2A41E900052FD1 /* EcoMarketUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcoMarketUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		52C70F672B2A431D00052FD1 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		52C70F732B2A46F500052FD1 /* BusketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusketViewController.swift; sourceTree = "<group>"; };
+		52C70F782B2A471F00052FD1 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		52C70F7D2B2A473C00052FD1 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		52C70F822B2A47E400052FD1 /* UIcolor + extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIcolor + extention.swift"; sourceTree = "<group>"; };
+		52C70F842B2A483F00052FD1 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
+		52C70F872B2A49B000052FD1 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		52C70F8C2B2A4E8200052FD1 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		52C70F8F2B2A4EC300052FD1 /* UICollectionViewCell + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell + extension.swift"; sourceTree = "<group>"; };
+		52C70F922B2A54E100052FD1 /* APIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
+		52C70F962B2A561D00052FD1 /* ProductCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCategory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52C70F9A2B2A567700052FD1 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,14 +123,11 @@
 		52C70F2E2B2A41E400052FD1 /* EcoMarket */ = {
 			isa = PBXGroup;
 			children = (
-				52C70F2F2B2A41E400052FD1 /* AppDelegate.swift */,
-				52C70F312B2A41E400052FD1 /* SceneDelegate.swift */,
-				52C70F332B2A41E400052FD1 /* ViewController.swift */,
-				52C70F352B2A41E400052FD1 /* Main.storyboard */,
-				52C70F3B2B2A41E800052FD1 /* Assets.xcassets */,
-				52C70F3D2B2A41E800052FD1 /* LaunchScreen.storyboard */,
-				52C70F402B2A41E800052FD1 /* Info.plist */,
-				52C70F382B2A41E400052FD1 /* EcoMarket.xcdatamodeld */,
+				52C70F642B2A421700052FD1 /* App */,
+				52C70F942B2A55FD00052FD1 /* Model */,
+				52C70F652B2A422900052FD1 /* Workflow */,
+				52C70F7F2B2A47A700052FD1 /* Components */,
+				52C70F622B2A41FA00052FD1 /* Resourse */,
 			);
 			path = EcoMarket;
 			sourceTree = "<group>";
@@ -130,6 +149,275 @@
 			path = EcoMarketUITests;
 			sourceTree = "<group>";
 		};
+		52C70F622B2A41FA00052FD1 /* Resourse */ = {
+			isa = PBXGroup;
+			children = (
+				52C70F3B2B2A41E800052FD1 /* Assets.xcassets */,
+				52C70F3D2B2A41E800052FD1 /* LaunchScreen.storyboard */,
+				52C70F402B2A41E800052FD1 /* Info.plist */,
+				52C70F632B2A420500052FD1 /* CoreData */,
+			);
+			path = Resourse;
+			sourceTree = "<group>";
+		};
+		52C70F632B2A420500052FD1 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				52C70F382B2A41E400052FD1 /* EcoMarket.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		52C70F642B2A421700052FD1 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				52C70F2F2B2A41E400052FD1 /* AppDelegate.swift */,
+				52C70F312B2A41E400052FD1 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		52C70F652B2A422900052FD1 /* Workflow */ = {
+			isa = PBXGroup;
+			children = (
+				52C70F862B2A499C00052FD1 /* Bases */,
+				52C70F662B2A42E800052FD1 /* TabBar */,
+				52C70F692B2A45BD00052FD1 /* HomeScreen */,
+				52C70F6D2B2A45E000052FD1 /* BusketScreen */,
+				52C70F6E2B2A45F300052FD1 /* HistoryScreen */,
+				52C70F6F2B2A460400052FD1 /* InfoScreen */,
+			);
+			path = Workflow;
+			sourceTree = "<group>";
+		};
+		52C70F662B2A42E800052FD1 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				52C70F672B2A431D00052FD1 /* TabBarController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		52C70F692B2A45BD00052FD1 /* HomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				52C70F6C2B2A45D600052FD1 /* Model */,
+				52C70F6B2B2A45CC00052FD1 /* Presenter */,
+				52C70F6A2B2A45C500052FD1 /* View */,
+			);
+			path = HomeScreen;
+			sourceTree = "<group>";
+		};
+		52C70F6A2B2A45C500052FD1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				52C70F332B2A41E400052FD1 /* HomeViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		52C70F6B2B2A45CC00052FD1 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		52C70F6C2B2A45D600052FD1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		52C70F6D2B2A45E000052FD1 /* BusketScreen */ = {
+			isa = PBXGroup;
+			children = (
+				52C70F702B2A46CC00052FD1 /* Model */,
+				52C70F712B2A46D400052FD1 /* Presenter */,
+				52C70F722B2A46DA00052FD1 /* View */,
+			);
+			path = BusketScreen;
+			sourceTree = "<group>";
+		};
+		52C70F6E2B2A45F300052FD1 /* HistoryScreen */ = {
+			isa = PBXGroup;
+			children = (
+				52C70F772B2A470C00052FD1 /* Model */,
+				52C70F762B2A470400052FD1 /* Presenter */,
+				52C70F752B2A46FE00052FD1 /* View */,
+			);
+			path = HistoryScreen;
+			sourceTree = "<group>";
+		};
+		52C70F6F2B2A460400052FD1 /* InfoScreen */ = {
+			isa = PBXGroup;
+			children = (
+				52C70F7C2B2A472E00052FD1 /* Model */,
+				52C70F7B2B2A472800052FD1 /* Presenter */,
+				52C70F7A2B2A472300052FD1 /* View */,
+			);
+			path = InfoScreen;
+			sourceTree = "<group>";
+		};
+		52C70F702B2A46CC00052FD1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		52C70F712B2A46D400052FD1 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		52C70F722B2A46DA00052FD1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				52C70F732B2A46F500052FD1 /* BusketViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		52C70F752B2A46FE00052FD1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				52C70F782B2A471F00052FD1 /* HistoryViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		52C70F762B2A470400052FD1 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		52C70F772B2A470C00052FD1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		52C70F7A2B2A472300052FD1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				52C70F7D2B2A473C00052FD1 /* InfoViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		52C70F7B2B2A472800052FD1 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		52C70F7C2B2A472E00052FD1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		52C70F7F2B2A47A700052FD1 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				52C70F912B2A54C700052FD1 /* Constants */,
+				52C70F892B2A4E4800052FD1 /* Customs */,
+				52C70F802B2A47BB00052FD1 /* Extensions */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		52C70F802B2A47BB00052FD1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				52C70F8E2B2A4E9800052FD1 /* UICollectionViewCell */,
+				52C70F812B2A47C900052FD1 /* UIColor */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		52C70F812B2A47C900052FD1 /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				52C70F822B2A47E400052FD1 /* UIcolor + extention.swift */,
+				52C70F842B2A483F00052FD1 /* Color.xcassets */,
+			);
+			path = UIColor;
+			sourceTree = "<group>";
+		};
+		52C70F862B2A499C00052FD1 /* Bases */ = {
+			isa = PBXGroup;
+			children = (
+				52C70F872B2A49B000052FD1 /* BaseViewController.swift */,
+			);
+			path = Bases;
+			sourceTree = "<group>";
+		};
+		52C70F892B2A4E4800052FD1 /* Customs */ = {
+			isa = PBXGroup;
+			children = (
+				52C70F8A2B2A4E5800052FD1 /* Cells */,
+			);
+			path = Customs;
+			sourceTree = "<group>";
+		};
+		52C70F8A2B2A4E5800052FD1 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				52C70F8B2B2A4E6000052FD1 /* UIColletionViewCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		52C70F8B2B2A4E6000052FD1 /* UIColletionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				52C70F8C2B2A4E8200052FD1 /* CategoryCollectionViewCell.swift */,
+			);
+			path = UIColletionViewCell;
+			sourceTree = "<group>";
+		};
+		52C70F8E2B2A4E9800052FD1 /* UICollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				52C70F8F2B2A4EC300052FD1 /* UICollectionViewCell + extension.swift */,
+			);
+			path = UICollectionViewCell;
+			sourceTree = "<group>";
+		};
+		52C70F912B2A54C700052FD1 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				52C70F922B2A54E100052FD1 /* APIEndpoints.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		52C70F942B2A55FD00052FD1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				52C70F952B2A560800052FD1 /* DTOs */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		52C70F952B2A560800052FD1 /* DTOs */ = {
+			isa = PBXGroup;
+			children = (
+				52C70F962B2A561D00052FD1 /* ProductCategory.swift */,
+			);
+			path = DTOs;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,6 +434,9 @@
 			dependencies = (
 			);
 			name = EcoMarket;
+			packageProductDependencies = (
+				52C70F992B2A567700052FD1 /* Kingfisher */,
+			);
 			productName = EcoMarket;
 			productReference = 52C70F2C2B2A41E400052FD1 /* EcoMarket.app */;
 			productType = "com.apple.product-type.application";
@@ -218,6 +509,9 @@
 				Base,
 			);
 			mainGroup = 52C70F232B2A41E400052FD1;
+			packageReferences = (
+				52C70F982B2A567700052FD1 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 52C70F2D2B2A41E400052FD1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -236,7 +530,7 @@
 			files = (
 				52C70F3F2B2A41E800052FD1 /* LaunchScreen.storyboard in Resources */,
 				52C70F3C2B2A41E800052FD1 /* Assets.xcassets in Resources */,
-				52C70F372B2A41E400052FD1 /* Main.storyboard in Resources */,
+				52C70F852B2A483F00052FD1 /* Color.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,9 +555,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52C70F342B2A41E400052FD1 /* ViewController.swift in Sources */,
+				52C70F342B2A41E400052FD1 /* HomeViewController.swift in Sources */,
 				52C70F3A2B2A41E400052FD1 /* EcoMarket.xcdatamodeld in Sources */,
+				52C70F742B2A46F500052FD1 /* BusketViewController.swift in Sources */,
 				52C70F302B2A41E400052FD1 /* AppDelegate.swift in Sources */,
+				52C70F832B2A47E400052FD1 /* UIcolor + extention.swift in Sources */,
+				52C70F882B2A49B000052FD1 /* BaseViewController.swift in Sources */,
+				52C70F902B2A4EC300052FD1 /* UICollectionViewCell + extension.swift in Sources */,
+				52C70F682B2A431D00052FD1 /* TabBarController.swift in Sources */,
+				52C70F932B2A54E100052FD1 /* APIEndpoints.swift in Sources */,
+				52C70F792B2A471F00052FD1 /* HistoryViewController.swift in Sources */,
+				52C70F8D2B2A4E8200052FD1 /* CategoryCollectionViewCell.swift in Sources */,
+				52C70F972B2A561D00052FD1 /* ProductCategory.swift in Sources */,
+				52C70F7E2B2A473C00052FD1 /* InfoViewController.swift in Sources */,
 				52C70F322B2A41E400052FD1 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -301,14 +605,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		52C70F352B2A41E400052FD1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				52C70F362B2A41E400052FD1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		52C70F3D2B2A41E800052FD1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -443,10 +739,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = F7W7R66652;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = EcoMarket/Info.plist;
+				INFOPLIST_FILE = EcoMarket/Resourse/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -471,10 +766,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = F7W7R66652;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = EcoMarket/Info.plist;
+				INFOPLIST_FILE = EcoMarket/Resourse/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -606,6 +900,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		52C70F982B2A567700052FD1 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		52C70F992B2A567700052FD1 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 52C70F982B2A567700052FD1 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		52C70F382B2A41E400052FD1 /* EcoMarket.xcdatamodeld */ = {
