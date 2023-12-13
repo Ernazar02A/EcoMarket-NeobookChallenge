@@ -20,9 +20,20 @@ class HomeViewController: BaseViewController {
         return view
     }()
     
+    var presenter: HomePresenterProtocol!
+    
     override func setup() {
         super.setup()
-        navigationItem.title = "Эко маркет"
+        setupNavigationTitle()
+        presenter = HomePresenter(view: self, model: HomeModel())
+    }
+    
+    private func setupNavigationTitle() {
+        let titleLabel = UILabel()
+        titleLabel.text = "Эко маркет"
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 24.0)
+        titleLabel.sizeToFit()
+        navigationItem.titleView = titleLabel
     }
     
     override func setupView() {
@@ -31,10 +42,18 @@ class HomeViewController: BaseViewController {
     }
 }
 
+//MARK: - HomeViewProtocol
+extension HomeViewController: HomeViewProtocol {
+    func reloadData() {
+        foodCategoryCollectionView.reloadData()
+    }
+}
+
+
 //MARK: - UICollectionViewDataSource
 extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        10
+        presenter.countCategorys
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -42,7 +61,8 @@ extension HomeViewController: UICollectionViewDataSource {
             print("find nil CategoryCollectionViewCell")
             return UICollectionViewCell()
         }
-        cell.backgroundColor = .black
+        let model = presenter.getCategory(indexPath)
+        cell.setupData(model)
         return cell
     }
 }
@@ -50,7 +70,7 @@ extension HomeViewController: UICollectionViewDataSource {
 //MARK: - UICollectionViewDelegate
 extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //
+        print(presenter.getIdCategory(indexPath))
     }
 }
 

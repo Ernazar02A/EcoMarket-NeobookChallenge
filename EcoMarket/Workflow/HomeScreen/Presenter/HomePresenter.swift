@@ -1,0 +1,65 @@
+//
+//  HomePresenter.swift
+//  EcoMarket
+//
+//  Created by Ernazar on 14/12/23.
+//
+
+import Foundation
+
+protocol HomeViewProtocol: AnyObject {
+    func reloadData()
+}
+
+protocol HomePresenterProtocol: AnyObject {
+    func getCategorys()
+    func getIdCategory(_ indexPath: IndexPath) -> Int
+    func getCategory(_ indexPath: IndexPath) -> ProductCategory
+    var countCategorys: Int { get }
+}
+
+class HomePresenter: HomePresenterProtocol {
+    weak var view: HomeViewProtocol?
+    var model: HomeModelProtocol!
+    
+    var countCategorys: Int {
+        productsCategorys.count
+    }
+
+    private var productsCategorys: [ProductCategory] = []
+    
+    init(view: HomeViewProtocol, model: HomeModelProtocol) {
+        self.view = view
+        self.model = model
+        getCategorys()
+    }
+    
+    
+    func getCategorys() {
+        model.fetchData { [weak self] result in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                self.handleFetchResult(result: result)
+            }
+        }
+    }
+    
+    private func handleFetchResult(result: Result<[ProductCategory], TypeRequestError>) {
+        switch result {
+        case .success(let data):
+            productsCategorys = data
+            view?.reloadData()
+        case .failure(let error):
+            print(error)
+        }
+    }
+    
+    func getIdCategory(_ indexPath: IndexPath) -> Int {
+        productsCategorys[indexPath.row].id
+    }
+    
+    func getCategory(_ indexPath: IndexPath) -> ProductCategory {
+        productsCategorys[indexPath.row]
+    }
+}
+
