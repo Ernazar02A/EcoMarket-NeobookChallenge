@@ -28,6 +28,12 @@
 		52C70F932B2A54E100052FD1 /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C70F922B2A54E100052FD1 /* APIEndpoints.swift */; };
 		52C70F972B2A561D00052FD1 /* ProductCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C70F962B2A561D00052FD1 /* ProductCategory.swift */; };
 		52C70F9A2B2A567700052FD1 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 52C70F992B2A567700052FD1 /* Kingfisher */; };
+		52C70F9C2B2A591E00052FD1 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C70F9B2B2A591E00052FD1 /* Product.swift */; };
+		52C70F9F2B2A59B400052FD1 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C70F9E2B2A59B400052FD1 /* NetworkManager.swift */; };
+		52C70FA22B2A5A0900052FD1 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C70FA12B2A5A0900052FD1 /* NetworkService.swift */; };
+		52C70FA52B2A67F800052FD1 /* UIImageView + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C70FA42B2A67F800052FD1 /* UIImageView + extension.swift */; };
+		52C70FA72B2A69F500052FD1 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C70FA62B2A69F500052FD1 /* HomeModel.swift */; };
+		52C70FA92B2A6BBD00052FD1 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C70FA82B2A6BBD00052FD1 /* HomePresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +78,12 @@
 		52C70F8F2B2A4EC300052FD1 /* UICollectionViewCell + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell + extension.swift"; sourceTree = "<group>"; };
 		52C70F922B2A54E100052FD1 /* APIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
 		52C70F962B2A561D00052FD1 /* ProductCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCategory.swift; sourceTree = "<group>"; };
+		52C70F9B2B2A591E00052FD1 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		52C70F9E2B2A59B400052FD1 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		52C70FA12B2A5A0900052FD1 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		52C70FA42B2A67F800052FD1 /* UIImageView + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView + extension.swift"; sourceTree = "<group>"; };
+		52C70FA62B2A69F500052FD1 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		52C70FA82B2A6BBD00052FD1 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +231,7 @@
 		52C70F6B2B2A45CC00052FD1 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				52C70FA82B2A6BBD00052FD1 /* HomePresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -226,6 +239,7 @@
 		52C70F6C2B2A45D600052FD1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				52C70FA62B2A69F500052FD1 /* HomeModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -339,6 +353,7 @@
 		52C70F802B2A47BB00052FD1 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				52C70FA32B2A67E100052FD1 /* UIImageView */,
 				52C70F8E2B2A4E9800052FD1 /* UICollectionViewCell */,
 				52C70F812B2A47C900052FD1 /* UIColor */,
 			);
@@ -405,6 +420,7 @@
 		52C70F942B2A55FD00052FD1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				52C70F9D2B2A598000052FD1 /* Network */,
 				52C70F952B2A560800052FD1 /* DTOs */,
 			);
 			path = Model;
@@ -414,8 +430,34 @@
 			isa = PBXGroup;
 			children = (
 				52C70F962B2A561D00052FD1 /* ProductCategory.swift */,
+				52C70F9B2B2A591E00052FD1 /* Product.swift */,
 			);
 			path = DTOs;
+			sourceTree = "<group>";
+		};
+		52C70F9D2B2A598000052FD1 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				52C70FA02B2A59FC00052FD1 /* NetwokService */,
+				52C70F9E2B2A59B400052FD1 /* NetworkManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		52C70FA02B2A59FC00052FD1 /* NetwokService */ = {
+			isa = PBXGroup;
+			children = (
+				52C70FA12B2A5A0900052FD1 /* NetworkService.swift */,
+			);
+			path = NetwokService;
+			sourceTree = "<group>";
+		};
+		52C70FA32B2A67E100052FD1 /* UIImageView */ = {
+			isa = PBXGroup;
+			children = (
+				52C70FA42B2A67F800052FD1 /* UIImageView + extension.swift */,
+			);
+			path = UIImageView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -557,7 +599,13 @@
 			files = (
 				52C70F342B2A41E400052FD1 /* HomeViewController.swift in Sources */,
 				52C70F3A2B2A41E400052FD1 /* EcoMarket.xcdatamodeld in Sources */,
+				52C70FA52B2A67F800052FD1 /* UIImageView + extension.swift in Sources */,
+				52C70FA92B2A6BBD00052FD1 /* HomePresenter.swift in Sources */,
+				52C70F9C2B2A591E00052FD1 /* Product.swift in Sources */,
+				52C70FA72B2A69F500052FD1 /* HomeModel.swift in Sources */,
 				52C70F742B2A46F500052FD1 /* BusketViewController.swift in Sources */,
+				52C70F9F2B2A59B400052FD1 /* NetworkManager.swift in Sources */,
+				52C70FA22B2A5A0900052FD1 /* NetworkService.swift in Sources */,
 				52C70F302B2A41E400052FD1 /* AppDelegate.swift in Sources */,
 				52C70F832B2A47E400052FD1 /* UIcolor + extention.swift in Sources */,
 				52C70F882B2A49B000052FD1 /* BaseViewController.swift in Sources */,
