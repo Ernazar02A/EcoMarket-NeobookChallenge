@@ -12,6 +12,7 @@ protocol HomeViewProtocol: AnyObject {
 }
 
 protocol HomePresenterProtocol: AnyObject {
+    init(view: HomeViewProtocol, model: HomeModelProtocol)
     func getCategorys()
     func getIdCategory(_ indexPath: IndexPath) -> Int
     func getCategory(_ indexPath: IndexPath) -> ProductCategory
@@ -28,7 +29,7 @@ class HomePresenter: HomePresenterProtocol {
 
     private var productsCategorys: [ProductCategory] = []
     
-    init(view: HomeViewProtocol, model: HomeModelProtocol) {
+    required init(view: HomeViewProtocol, model: HomeModelProtocol) {
         self.view = view
         self.model = model
         getCategorys()

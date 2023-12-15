@@ -34,3 +34,23 @@ final class EcoMarketTests: XCTestCase {
     }
 
 }
+
+class TabBarControllerTests: XCTestCase {
+    
+    var tabBarController: TabBarController!
+    var tabBarBuilder: TabBarBuilderProtocol!
+
+    override func setUp() {
+        super.setUp()
+        tabBarBuilder = TabBarBuilder()
+        tabBarController = tabBarBuilder.buildTabBarController()
+    }
+
+    func testTabBarControllerInitialization() {
+        XCTAssertNotNil(tabBarController)
+        XCTAssertNotNil(tabBarController.presenter)
+        XCTAssertNotNil(tabBarController.presenter.didSelectTab(at: 1))
+    }
+
+    // Дополнительные тесты по необходимости
+}

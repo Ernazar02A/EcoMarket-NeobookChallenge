@@ -9,13 +9,16 @@ import UIKit
 
 class TabBarController: UITabBarController {
     
+    var presenter: TabBarPresenterProtocol!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViewControllers()
         tabBar.tintColor = .mainGreen
         tabBar.unselectedItemTintColor = .gray1
+        delegate = self
     }
-    
+
     private func setupViewControllers() {
         let homeViewController = createViewController(
             viewController: HomeViewController(),
@@ -53,5 +56,13 @@ class TabBarController: UITabBarController {
         let tabBarItem = UITabBarItem(title: title, image: image, selectedImage: selectedImage)
         viewContoller.tabBarItem = tabBarItem
         return viewContoller
+    }
+}
+
+extension TabBarController: UITabBarControllerDelegate {
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        if let index = tabBarController.viewControllers?.firstIndex(of: viewController) {
+            presenter.didSelectTab(at: index)
+        }
     }
 }

@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		524CF6F42B2C3A9C003B53DF /* InitialRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524CF6F32B2C3A9C003B53DF /* InitialRouter.swift */; };
+		524CF6F82B2C4E7F003B53DF /* TabBarRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524CF6F72B2C4E7F003B53DF /* TabBarRouterProtocol.swift */; };
+		524CF6FA2B2C4EA6003B53DF /* TabBarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524CF6F92B2C4EA6003B53DF /* TabBarRouter.swift */; };
+		524CF6FE2B2C4EF7003B53DF /* TabBarPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524CF6FD2B2C4EF7003B53DF /* TabBarPresenterProtocol.swift */; };
+		524CF7002B2C4F19003B53DF /* TabBarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524CF6FF2B2C4F19003B53DF /* TabBarPresenter.swift */; };
+		524CF7042B2C4F91003B53DF /* TabBarProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524CF7032B2C4F91003B53DF /* TabBarProtocol.swift */; };
+		524CF7062B2C4FB1003B53DF /* TabBarBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524CF7052B2C4FB1003B53DF /* TabBarBuilder.swift */; };
 		52C70F302B2A41E400052FD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C70F2F2B2A41E400052FD1 /* AppDelegate.swift */; };
 		52C70F322B2A41E400052FD1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C70F312B2A41E400052FD1 /* SceneDelegate.swift */; };
 		52C70F342B2A41E400052FD1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C70F332B2A41E400052FD1 /* HomeViewController.swift */; };
@@ -54,6 +61,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		524CF6F32B2C3A9C003B53DF /* InitialRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialRouter.swift; sourceTree = "<group>"; };
+		524CF6F72B2C4E7F003B53DF /* TabBarRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarRouterProtocol.swift; sourceTree = "<group>"; };
+		524CF6F92B2C4EA6003B53DF /* TabBarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarRouter.swift; sourceTree = "<group>"; };
+		524CF6FD2B2C4EF7003B53DF /* TabBarPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPresenterProtocol.swift; sourceTree = "<group>"; };
+		524CF6FF2B2C4F19003B53DF /* TabBarPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPresenter.swift; sourceTree = "<group>"; };
+		524CF7032B2C4F91003B53DF /* TabBarProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarProtocol.swift; sourceTree = "<group>"; };
+		524CF7052B2C4FB1003B53DF /* TabBarBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarBuilder.swift; sourceTree = "<group>"; };
 		52C70F2C2B2A41E400052FD1 /* EcoMarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EcoMarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52C70F2F2B2A41E400052FD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52C70F312B2A41E400052FD1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +126,65 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		524CF6F22B2C3A82003B53DF /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				524CF6F32B2C3A9C003B53DF /* InitialRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		524CF6F52B2C4E38003B53DF /* TabBarRouter */ = {
+			isa = PBXGroup;
+			children = (
+				524CF6F62B2C4E5E003B53DF /* Protocol */,
+				524CF6F92B2C4EA6003B53DF /* TabBarRouter.swift */,
+			);
+			path = TabBarRouter;
+			sourceTree = "<group>";
+		};
+		524CF6F62B2C4E5E003B53DF /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				524CF6F72B2C4E7F003B53DF /* TabBarRouterProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		524CF6FB2B2C4EC9003B53DF /* TabBarPresenter */ = {
+			isa = PBXGroup;
+			children = (
+				524CF6FC2B2C4EE3003B53DF /* Protocol */,
+				524CF6FF2B2C4F19003B53DF /* TabBarPresenter.swift */,
+			);
+			path = TabBarPresenter;
+			sourceTree = "<group>";
+		};
+		524CF6FC2B2C4EE3003B53DF /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				524CF6FD2B2C4EF7003B53DF /* TabBarPresenterProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		524CF7012B2C4F59003B53DF /* TabBarBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				524CF7022B2C4F80003B53DF /* Protocol */,
+				524CF7052B2C4FB1003B53DF /* TabBarBuilder.swift */,
+			);
+			path = TabBarBuilder;
+			sourceTree = "<group>";
+		};
+		524CF7022B2C4F80003B53DF /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				524CF7032B2C4F91003B53DF /* TabBarProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 		52C70F232B2A41E400052FD1 = {
 			isa = PBXGroup;
 			children = (
@@ -192,6 +265,7 @@
 		52C70F652B2A422900052FD1 /* Workflow */ = {
 			isa = PBXGroup;
 			children = (
+				524CF6F22B2C3A82003B53DF /* Router */,
 				52C70F862B2A499C00052FD1 /* Bases */,
 				52C70F662B2A42E800052FD1 /* TabBar */,
 				52C70F692B2A45BD00052FD1 /* HomeScreen */,
@@ -205,6 +279,9 @@
 		52C70F662B2A42E800052FD1 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
+				524CF7012B2C4F59003B53DF /* TabBarBuilder */,
+				524CF6FB2B2C4EC9003B53DF /* TabBarPresenter */,
+				524CF6F52B2C4E38003B53DF /* TabBarRouter */,
 				52C70F672B2A431D00052FD1 /* TabBarController.swift */,
 			);
 			path = TabBar;
@@ -597,7 +674,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				524CF6F82B2C4E7F003B53DF /* TabBarRouterProtocol.swift in Sources */,
 				52C70F342B2A41E400052FD1 /* HomeViewController.swift in Sources */,
+				524CF7062B2C4FB1003B53DF /* TabBarBuilder.swift in Sources */,
 				52C70F3A2B2A41E400052FD1 /* EcoMarket.xcdatamodeld in Sources */,
 				52C70FA52B2A67F800052FD1 /* UIImageView + extension.swift in Sources */,
 				52C70FA92B2A6BBD00052FD1 /* HomePresenter.swift in Sources */,
@@ -606,15 +685,20 @@
 				52C70F742B2A46F500052FD1 /* BusketViewController.swift in Sources */,
 				52C70F9F2B2A59B400052FD1 /* NetworkManager.swift in Sources */,
 				52C70FA22B2A5A0900052FD1 /* NetworkService.swift in Sources */,
+				524CF6FA2B2C4EA6003B53DF /* TabBarRouter.swift in Sources */,
 				52C70F302B2A41E400052FD1 /* AppDelegate.swift in Sources */,
 				52C70F832B2A47E400052FD1 /* UIcolor + extention.swift in Sources */,
 				52C70F882B2A49B000052FD1 /* BaseViewController.swift in Sources */,
+				524CF6F42B2C3A9C003B53DF /* InitialRouter.swift in Sources */,
 				52C70F902B2A4EC300052FD1 /* UICollectionViewCell + extension.swift in Sources */,
 				52C70F682B2A431D00052FD1 /* TabBarController.swift in Sources */,
 				52C70F932B2A54E100052FD1 /* APIEndpoints.swift in Sources */,
 				52C70F792B2A471F00052FD1 /* HistoryViewController.swift in Sources */,
 				52C70F8D2B2A4E8200052FD1 /* CategoryCollectionViewCell.swift in Sources */,
+				524CF7002B2C4F19003B53DF /* TabBarPresenter.swift in Sources */,
+				524CF6FE2B2C4EF7003B53DF /* TabBarPresenterProtocol.swift in Sources */,
 				52C70F972B2A561D00052FD1 /* ProductCategory.swift in Sources */,
+				524CF7042B2C4F91003B53DF /* TabBarProtocol.swift in Sources */,
 				52C70F7E2B2A473C00052FD1 /* InfoViewController.swift in Sources */,
 				52C70F322B2A41E400052FD1 /* SceneDelegate.swift in Sources */,
 			);
