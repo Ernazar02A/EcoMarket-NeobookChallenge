@@ -71,6 +71,7 @@ extension HomeViewController: UICollectionViewDataSource {
 extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(presenter.getIdCategory(indexPath))
+        navigationController?.pushViewController(ListProductViewController(), animated: true)
     }
 }
 
