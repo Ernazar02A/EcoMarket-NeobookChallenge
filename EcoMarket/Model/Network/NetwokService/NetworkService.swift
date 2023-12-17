@@ -33,6 +33,20 @@ class NetworkService {
             completion(.failure(.requestNil))
             return
         }
+        
+        self.request(request: request, decodeType: [ProductCategory].self, completion: completion)
+    }
+    
+    func fetchProducts(with category: String, completion: @escaping (Result<[Product], TypeRequestError>) -> Void) {
+        guard let request = NetworkManager.shared.createRequest(typeRequest: .get, url: url.getProductsUrl(category), token: nil, parameters: nil) else {
+            completion(.failure(.requestNil))
+            return
+        }
+        
+        self.request(request: request, decodeType: [Product].self, completion: completion)
+    }
+    
+    private func request<T: Decodable>(request: URLRequest, decodeType: T.Type, completion: @escaping (Result<T, TypeRequestError>) -> Void) {
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
                 completion(.failure(.errorRequest(error)))
@@ -52,7 +66,7 @@ class NetworkService {
             switch httpResponse.statusCode {
             case 200:
                 do {
-                    let model = try self.decoder.decode([ProductCategory].self, from: data)
+                    let model = try self.decoder.decode(decodeType.self, from: data)
                     completion(.success(model))
                     return
                 } catch {

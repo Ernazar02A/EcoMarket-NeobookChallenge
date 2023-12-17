@@ -10,5 +10,7 @@ import Foundation
 struct APIEndpoints {
     static let baseUrl = "https://neobook.online/ecobak/"
     static let getProductCategorysUrl = baseUrl + "product-category-list/"
-    static let getProductsUrl = baseUrl + "product-list/"
+    static var getProductsUrl: (String) -> String = {
+        baseUrl + "product-list/?category_name=" + $0
+    }
 }

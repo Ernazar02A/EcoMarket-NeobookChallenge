@@ -14,7 +14,7 @@ protocol HomeViewProtocol: AnyObject {
 protocol HomePresenterProtocol: AnyObject {
     init(view: HomeViewProtocol, model: HomeModelProtocol)
     func getCategorys()
-    func getIdCategory(_ indexPath: IndexPath) -> Int
+    func getNameCategory(_ indexPath: IndexPath) -> String
     func getCategory(_ indexPath: IndexPath) -> ProductCategory
     var countCategorys: Int { get }
 }
@@ -55,8 +55,8 @@ class HomePresenter: HomePresenterProtocol {
         }
     }
     
-    func getIdCategory(_ indexPath: IndexPath) -> Int {
-        productsCategorys[indexPath.row].id
+    func getNameCategory(_ indexPath: IndexPath) -> String {
+        productsCategorys[indexPath.row].name
     }
     
     func getCategory(_ indexPath: IndexPath) -> ProductCategory {

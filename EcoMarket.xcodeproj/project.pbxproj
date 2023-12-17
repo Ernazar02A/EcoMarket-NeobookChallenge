@@ -42,6 +42,8 @@
 		52C70FA52B2A67F800052FD1 /* UIImageView + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C70FA42B2A67F800052FD1 /* UIImageView + extension.swift */; };
 		52C70FA72B2A69F500052FD1 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C70FA62B2A69F500052FD1 /* HomeModel.swift */; };
 		52C70FA92B2A6BBD00052FD1 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C70FA82B2A6BBD00052FD1 /* HomePresenter.swift */; };
+		52E232112B2F5194007CC631 /* ListProductPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E232102B2F5194007CC631 /* ListProductPresenter.swift */; };
+		52E232162B2F56FA007CC631 /* ListProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E232152B2F56FA007CC631 /* ListProductModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +102,8 @@
 		52C70FA42B2A67F800052FD1 /* UIImageView + extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView + extension.swift"; sourceTree = "<group>"; };
 		52C70FA62B2A69F500052FD1 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		52C70FA82B2A6BBD00052FD1 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		52E232102B2F5194007CC631 /* ListProductPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListProductPresenter.swift; sourceTree = "<group>"; };
+		52E232152B2F56FA007CC631 /* ListProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListProductModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,7 +205,7 @@
 		524CF7092B2C5B12003B53DF /* GeneralScreens */ = {
 			isa = PBXGroup;
 			children = (
-				524CF70A2B2C5B7F003B53DF /* ListProductViewController.swift */,
+				52E232122B2F519E007CC631 /* ListProductScreen */,
 			);
 			path = GeneralScreens;
 			sourceTree = "<group>";
@@ -556,6 +560,40 @@
 			path = UIImageView;
 			sourceTree = "<group>";
 		};
+		52E2320F2B2F5175007CC631 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				52E232102B2F5194007CC631 /* ListProductPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		52E232122B2F519E007CC631 /* ListProductScreen */ = {
+			isa = PBXGroup;
+			children = (
+				52E232142B2F56DC007CC631 /* Model */,
+				52E2320F2B2F5175007CC631 /* Presenter */,
+				52E232132B2F51AF007CC631 /* View */,
+			);
+			path = ListProductScreen;
+			sourceTree = "<group>";
+		};
+		52E232132B2F51AF007CC631 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				524CF70A2B2C5B7F003B53DF /* ListProductViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		52E232142B2F56DC007CC631 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				52E232152B2F56FA007CC631 /* ListProductModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -694,6 +732,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				524CF6F82B2C4E7F003B53DF /* TabBarRouterProtocol.swift in Sources */,
+				52E232162B2F56FA007CC631 /* ListProductModel.swift in Sources */,
 				52C70F342B2A41E400052FD1 /* HomeViewController.swift in Sources */,
 				524CF7062B2C4FB1003B53DF /* TabBarBuilder.swift in Sources */,
 				52C70F3A2B2A41E400052FD1 /* EcoMarket.xcdatamodeld in Sources */,
@@ -707,6 +746,7 @@
 				524CF6FA2B2C4EA6003B53DF /* TabBarRouter.swift in Sources */,
 				52C70F302B2A41E400052FD1 /* AppDelegate.swift in Sources */,
 				52C70F832B2A47E400052FD1 /* UIcolor + extention.swift in Sources */,
+				52E232112B2F5194007CC631 /* ListProductPresenter.swift in Sources */,
 				52C70F882B2A49B000052FD1 /* BaseViewController.swift in Sources */,
 				524CF6F42B2C3A9C003B53DF /* InitialRouter.swift in Sources */,
 				52C70F902B2A4EC300052FD1 /* UICollectionViewCell + extension.swift in Sources */,
