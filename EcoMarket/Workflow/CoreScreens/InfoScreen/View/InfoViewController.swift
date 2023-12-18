@@ -70,12 +70,14 @@ extension UIButton {
 class InfoViewController: BaseViewController {
     private let scrollView: UIScrollView = {
         let view = UIScrollView()
-        view.showsVerticalScrollIndicator = true
-        view.alwaysBounceVertical = true
-        view.alwaysBounceHorizontal = false
+        view.showsHorizontalScrollIndicator = false
+        view.showsVerticalScrollIndicator = false
+        view.alwaysBounceHorizontal = true
+        view.alwaysBounceVertical = false
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+    
     private let contentView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -98,6 +100,8 @@ class InfoViewController: BaseViewController {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.text = "Фрукты, овощи, зелень, сухофрукты а так же сделанные из натуральных ЭКО продуктов (варенье, салаты, соления, компоты и т.д.) можете заказать удобно, качественно и по доступной цене.\nГотовы сотрудничать взаимовыгодно с магазинами.\nНаши цены как на рынке.\nМы заинтересованы в экономии ваших денег и времени.\nСтоимость доставки 150 сом и ещё добавлен для окраину города.\nПри отказе подтвержденного заказа более 2-х раз Клиент заносится в чёрный список!!"
+        
+        //view.text = "Фрукты, овощи, зелень, сухофрукты а так же сделанные из"
         //view.text = "Фрукты, овощи, зелень,"
         view.font = .systemFont(ofSize: 16, weight: .regular)
         view.textColor = #colorLiteral(red: 0.7303193808, green: 0.7270888686, blue: 0.7336614728, alpha: 1)
@@ -130,10 +134,12 @@ class InfoViewController: BaseViewController {
     )
     
     override func setupView() {
-        view.addSubview(profilImageView)
-        view.addSubview(textTitleLabel)
-        view.addSubview(textLabel)
-        view.addSubview(buttonStackView)
+        view.addSubview(scrollView)
+        scrollView.addSubview(contentView)
+        contentView.addSubview(profilImageView)
+        contentView.addSubview(textTitleLabel)
+        contentView.addSubview(textLabel)
+        contentView.addSubview(buttonStackView)
         buttonStackView.addArrangedSubview(callButton)
         buttonStackView.addArrangedSubview(whatsAppButton)
         buttonStackView.addArrangedSubview(instagramButton)
@@ -143,74 +149,41 @@ class InfoViewController: BaseViewController {
     override func setupConstraints() {
         
         NSLayoutConstraint.activate([
-            profilImageView.topAnchor.constraint(equalTo: view.topAnchor),
-            profilImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            profilImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            profilImageView.heightAnchor.constraint(equalToConstant: 270),
+            scrollView.topAnchor.constraint(equalTo: view.topAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            
+            //contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+            contentView.heightAnchor.constraint(greaterThanOrEqualTo: scrollView.heightAnchor, multiplier: 1.1),
+            
+            profilImageView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            profilImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            profilImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            profilImageView.bottomAnchor.constraint(lessThanOrEqualTo: contentView.bottomAnchor),
+            //profilImageView.heightAnchor.constraint(equalToConstant: 270),
             
             textTitleLabel.topAnchor.constraint(equalTo: profilImageView.bottomAnchor, constant: 16),
-            textTitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            textTitleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            textTitleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            textTitleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
             
             textLabel.topAnchor.constraint(equalTo: textTitleLabel.bottomAnchor, constant: 8),
-            textLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            textLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            textLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            textLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
             
             buttonStackView.topAnchor.constraint(equalTo: textLabel.bottomAnchor, constant: 33),
-            buttonStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            buttonStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            buttonStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 50),
+            buttonStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            buttonStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
     
             callButton.heightAnchor.constraint(equalToConstant: 54),
             whatsAppButton.heightAnchor.constraint(equalToConstant: 54),
             instagramButton.heightAnchor.constraint(equalToConstant: 54),
         ])
     }
-    
-//    override func setupView() {
-//        view.addSubview(scrollView)
-//        scrollView.addSubview(contentView)
-//        contentView.addSubview(profilImageView)
-//        contentView.addSubview(textTitleLabel)
-//        contentView.addSubview(textLabel)
-//        contentView.addSubview(buttonStackView)
-//        buttonStackView.addArrangedSubview(callButton)
-//        buttonStackView.addArrangedSubview(whatsAppButton)
-//        buttonStackView.addArrangedSubview(instagramButton)
-//    }
-    
-//    override func setupConstraints() {
-//        scrollView.edges(superView: view)
-//        contentView.edges(superView: scrollView)
-//
-//        NSLayoutConstraint.activate([
-//            //contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-//            contentView.heightAnchor.constraint(equalTo: scrollView.heightAnchor, multiplier: 1.1),
-//            profilImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
-//            profilImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-//            profilImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-//            profilImageView.heightAnchor.constraint(equalToConstant: 270),
-//
-//            textTitleLabel.topAnchor.constraint(equalTo: profilImageView.bottomAnchor, constant: 16),
-//            textTitleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-//            textTitleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-//
-//            textLabel.topAnchor.constraint(equalTo: textTitleLabel.bottomAnchor, constant: 8),
-//            textLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-//            textLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-//
-//            buttonStackView.topAnchor.constraint(equalTo: textLabel.bottomAnchor, constant: 33),
-//            buttonStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-//            buttonStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-//            buttonStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16),
-//
-//            callButton.heightAnchor.constraint(equalToConstant: 54),
-//
-//            whatsAppButton.heightAnchor.constraint(equalToConstant: 54),
-//
-//            instagramButton.heightAnchor.constraint(equalToConstant: 54),
-//        ])
-//    }
 }
 
 extension UIView {

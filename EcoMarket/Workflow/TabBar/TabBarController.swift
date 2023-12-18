@@ -38,12 +38,10 @@ class TabBarController: UITabBarController {
             selectedImage: .init(named: "clock"),
             title: "История"
         )
-        let infoViewController = createViewController(
-            viewController: InfoViewController(),
-            image: .init(named: "help"),
-            selectedImage: .init(named: "help"),
-            title: "Инфо"
-        )
+        let infoView = InfoViewController()
+        let tabBarItem = UITabBarItem(title: "help", image: .init(named: "help"), selectedImage: .init(named: "help"))
+        infoView.tabBarItem = tabBarItem
+        let infoViewController = infoView
 
         setViewControllers(
             [homeViewController,busketViewController,historyViewController, infoViewController],
