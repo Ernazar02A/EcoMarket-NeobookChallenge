@@ -11,4 +11,5 @@ struct ProductCategory: Decodable {
     let id: Int
     let name: String
     let image: String
+    var selected: Bool? = false
 }
