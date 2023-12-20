@@ -11,7 +11,6 @@ protocol ListProductPresenterProtocol: AnyObject {
     init(view: ListProductViewProtocol, model: ListProductModelProtocol, category: ProductCategory)
     func setData(category: ProductCategory)
     func getProduct(_ indexPath: IndexPath) -> Product
-    func getCategorys()
     var countProduct: Int { get }
     var countCategorys: Int { get }
     func getCategory(_ indexPath: IndexPath) -> ProductCategory
@@ -32,7 +31,11 @@ class ListProductPresenter: ListProductPresenterProtocol {
         }
     }
     
-    private var categorys: [ProductCategory] = []
+    private var categorys: [ProductCategory] = [] {
+        didSet {
+            view?.reloadData()
+        }
+    }
     
     var countProduct: Int {
         products.count
@@ -68,16 +71,13 @@ class ListProductPresenter: ListProductPresenterProtocol {
     
     func chagenSelectedCategory(category: ProductCategory) {
         guard let index = categorys.firstIndex(where: {$0.name == category.name}) else { return }
+        categorys = categorys.map { var updatedCategory = $0; updatedCategory.selected = false; return updatedCategory }
         categorys[index].selected = true
     }
     
     
     func getProduct(_ indexPath: IndexPath) -> Product {
         products[indexPath.row]
-    }
-    
-    func getCategorys() {
-        
     }
     
     func getCategory(_ indexPath: IndexPath) -> ProductCategory {
