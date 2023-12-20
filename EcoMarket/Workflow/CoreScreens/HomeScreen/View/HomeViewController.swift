@@ -37,6 +37,8 @@ class HomeViewController: BaseViewController {
     }
     
     override func setupView() {
+        navigationItem.backButtonTitle = ""
+        navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.2123982906, green: 0.2327036262, blue: 0.2559677958, alpha: 1)
         view.addSubview(foodCategoryCollectionView)
         foodCategoryCollectionView.frame = view.bounds
     }
@@ -71,7 +73,9 @@ extension HomeViewController: UICollectionViewDataSource {
 extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(presenter.getNameCategory(indexPath))
-        navigationController?.pushViewController(ListProductViewController(), animated: true)
+        let vc = ListProductViewController()
+        vc.selectedCategoryIndex = presenter.getCategory(indexPath).name
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
