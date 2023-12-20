@@ -15,6 +15,9 @@
 		524CF7042B2C4F91003B53DF /* TabBarProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524CF7032B2C4F91003B53DF /* TabBarProtocol.swift */; };
 		524CF7062B2C4FB1003B53DF /* TabBarBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524CF7052B2C4FB1003B53DF /* TabBarBuilder.swift */; };
 		524CF70B2B2C5B7F003B53DF /* ListProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524CF70A2B2C5B7F003B53DF /* ListProductViewController.swift */; };
+		52BC52AD2B32C29600BCDE72 /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BC52AC2B32C29600BCDE72 /* ProductCollectionViewCell.swift */; };
+		52BC52B02B32C54E00BCDE72 /* UIButton + Extentsions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BC52AF2B32C54E00BCDE72 /* UIButton + Extentsions.swift */; };
+		52BC52B32B32C5DA00BCDE72 /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BC52B22B32C5DA00BCDE72 /* CustomSegmentedControl.swift */; };
 		52C70F302B2A41E400052FD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C70F2F2B2A41E400052FD1 /* AppDelegate.swift */; };
 		52C70F322B2A41E400052FD1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C70F312B2A41E400052FD1 /* SceneDelegate.swift */; };
 		52C70F342B2A41E400052FD1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C70F332B2A41E400052FD1 /* HomeViewController.swift */; };
@@ -72,6 +75,9 @@
 		524CF7032B2C4F91003B53DF /* TabBarProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarProtocol.swift; sourceTree = "<group>"; };
 		524CF7052B2C4FB1003B53DF /* TabBarBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarBuilder.swift; sourceTree = "<group>"; };
 		524CF70A2B2C5B7F003B53DF /* ListProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListProductViewController.swift; sourceTree = "<group>"; };
+		52BC52AC2B32C29600BCDE72 /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
+		52BC52AF2B32C54E00BCDE72 /* UIButton + Extentsions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + Extentsions.swift"; sourceTree = "<group>"; };
+		52BC52B22B32C5DA00BCDE72 /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
 		52C70F2C2B2A41E400052FD1 /* EcoMarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EcoMarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52C70F2F2B2A41E400052FD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52C70F312B2A41E400052FD1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -208,6 +214,22 @@
 				52E232122B2F519E007CC631 /* ListProductScreen */,
 			);
 			path = GeneralScreens;
+			sourceTree = "<group>";
+		};
+		52BC52AE2B32C52D00BCDE72 /* UIButton */ = {
+			isa = PBXGroup;
+			children = (
+				52BC52AF2B32C54E00BCDE72 /* UIButton + Extentsions.swift */,
+			);
+			path = UIButton;
+			sourceTree = "<group>";
+		};
+		52BC52B12B32C5BE00BCDE72 /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				52BC52B22B32C5DA00BCDE72 /* CustomSegmentedControl.swift */,
+			);
+			path = UIView;
 			sourceTree = "<group>";
 		};
 		52C70F232B2A41E400052FD1 = {
@@ -453,6 +475,7 @@
 		52C70F802B2A47BB00052FD1 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				52BC52AE2B32C52D00BCDE72 /* UIButton */,
 				52C70FA32B2A67E100052FD1 /* UIImageView */,
 				52C70F8E2B2A4E9800052FD1 /* UICollectionViewCell */,
 				52C70F812B2A47C900052FD1 /* UIColor */,
@@ -480,6 +503,7 @@
 		52C70F892B2A4E4800052FD1 /* Customs */ = {
 			isa = PBXGroup;
 			children = (
+				52BC52B12B32C5BE00BCDE72 /* UIView */,
 				52C70F8A2B2A4E5800052FD1 /* Cells */,
 			);
 			path = Customs;
@@ -497,6 +521,7 @@
 			isa = PBXGroup;
 			children = (
 				52C70F8C2B2A4E8200052FD1 /* CategoryCollectionViewCell.swift */,
+				52BC52AC2B32C29600BCDE72 /* ProductCollectionViewCell.swift */,
 			);
 			path = UIColletionViewCell;
 			sourceTree = "<group>";
@@ -731,10 +756,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52BC52B02B32C54E00BCDE72 /* UIButton + Extentsions.swift in Sources */,
 				524CF6F82B2C4E7F003B53DF /* TabBarRouterProtocol.swift in Sources */,
 				52E232162B2F56FA007CC631 /* ListProductModel.swift in Sources */,
 				52C70F342B2A41E400052FD1 /* HomeViewController.swift in Sources */,
 				524CF7062B2C4FB1003B53DF /* TabBarBuilder.swift in Sources */,
+				52BC52AD2B32C29600BCDE72 /* ProductCollectionViewCell.swift in Sources */,
 				52C70F3A2B2A41E400052FD1 /* EcoMarket.xcdatamodeld in Sources */,
 				52C70FA52B2A67F800052FD1 /* UIImageView + extension.swift in Sources */,
 				52C70FA92B2A6BBD00052FD1 /* HomePresenter.swift in Sources */,
@@ -758,6 +785,7 @@
 				524CF70B2B2C5B7F003B53DF /* ListProductViewController.swift in Sources */,
 				524CF6FE2B2C4EF7003B53DF /* TabBarPresenterProtocol.swift in Sources */,
 				52C70F972B2A561D00052FD1 /* ProductCategory.swift in Sources */,
+				52BC52B32B32C5DA00BCDE72 /* CustomSegmentedControl.swift in Sources */,
 				524CF7042B2C4F91003B53DF /* TabBarProtocol.swift in Sources */,
 				52C70F7E2B2A473C00052FD1 /* InfoViewController.swift in Sources */,
 				52C70F322B2A41E400052FD1 /* SceneDelegate.swift in Sources */,
