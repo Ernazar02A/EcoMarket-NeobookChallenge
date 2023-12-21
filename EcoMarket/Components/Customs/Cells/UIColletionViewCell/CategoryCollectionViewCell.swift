@@ -53,7 +53,7 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         ])
     }
     
-    open func setupData(_ category: ProductCategory) {
+    func setupData(_ category: ProductCategory) {
         productCategoryTitleLabel.text = category.name
         productCategoryImageView.kf.setImage(with: URL(string: category.image))
     }

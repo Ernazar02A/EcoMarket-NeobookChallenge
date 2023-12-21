@@ -3,4 +3,54 @@
    uuid = "6A09B4F4-AF79-441D-9BCB-3C4335565559"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F97A257F-C69F-46BA-BEFD-325E7079A669"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "EcoMarket/Workflow/GeneralScreens/ListProductScreen/View/ListProductViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "setupData()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F97A257F-C69F-46BA-BEFD-325E7079A669 - 47ae2c6c40ed0bf4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "EcoMarket.ListProductViewController.setupData() -&gt; ()"
+                  moduleName = "EcoMarket"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macbookpro/Desktop/project/EcoMarket/EcoMarket/Workflow/GeneralScreens/ListProductScreen/View/ListProductViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "85"
+                  endingLineNumber = "85"
+                  offsetFromSymbolStart = "193">
+               </Location>
+               <Location
+                  uuid = "F97A257F-C69F-46BA-BEFD-325E7079A669 - 50f38fc33b238163"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Array&lt;EcoMarket.Product&gt;, EcoMarket.TypeRequestError&gt;) -&gt; () in EcoMarket.ListProductViewController.setupData() -&gt; ()"
+                  moduleName = "EcoMarket"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/macbookpro/Desktop/project/EcoMarket/EcoMarket/Workflow/GeneralScreens/ListProductScreen/View/ListProductViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "85"
+                  endingLineNumber = "85"
+                  offsetFromSymbolStart = "146">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
