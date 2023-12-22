@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol CustomSegmentedControlDelegate: AnyObject {
+    func segmentTitle(title: String)
+}
+
 final class CustomSegmentedControl: UIView {
     
     private let scrollView: UIScrollView = {
@@ -28,10 +32,12 @@ final class CustomSegmentedControl: UIView {
     private let selectedView: UIView = {
         let view = UIView()
         view.backgroundColor = .mainGreen
-        view.layer.cornerRadius = 15
+        view.layer.cornerRadius = 12
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+    
+    weak var delegate: CustomSegmentedControlDelegate?
     
     private var widthConstraint = NSLayoutConstraint()
     private var leadingConstraint = NSLayoutConstraint()
@@ -56,7 +62,6 @@ final class CustomSegmentedControl: UIView {
     }
     
     func firstSelectedSegment(tag: Int) {
-        let color = #colorLiteral(red: 0.8571347594, green: 0.8542680144, blue: 0.8668256402, alpha: 1)
         changeColorText(tag: tag)
         DispatchQueue.main.async {
             self.widthConstraint.constant = self.stackView.arrangedSubviews[tag].frame.width
@@ -74,6 +79,7 @@ final class CustomSegmentedControl: UIView {
         } completion: { _ in
             self.changeColorText(tag: sender.tag)
         }
+        delegate?.segmentTitle(title: sender.titleLabel?.text ?? "")
     }
     
     private func changeColorText(tag: Int) {

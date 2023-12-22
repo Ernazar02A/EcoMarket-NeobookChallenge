@@ -7,12 +7,43 @@
 
 import UIKit
 
+class LoadView: UIView {
+    private var activityIndicator: UIActivityIndicatorView = {
+        let view = UIActivityIndicatorView(style: .large)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.color = .mainGreen
+        view.startAnimating()
+        return view
+    }()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func setup() {
+        addSubview(activityIndicator)
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        activityIndicator.isHidden = false
+        backgroundColor = .white
+        NSLayoutConstraint.activate([
+            activityIndicator.centerXAnchor.constraint(equalTo: centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: centerYAnchor),
+        ])
+    }
+}
+
 class ListProductViewController: UIViewController {
     
     private lazy var searchController: UISearchController = {
         let view = UISearchController()
         view.searchResultsUpdater = self
         view.searchBar.searchBarStyle = .minimal
+        view.delegate = self
         view.searchBar.placeholder = "Быстрый поиск"
         return view
     }()
@@ -21,29 +52,51 @@ class ListProductViewController: UIViewController {
 
     private lazy var productCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
+        layout.scrollDirection = .vertical
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.register(ProductCollectionViewCell.self, forCellWithReuseIdentifier: ProductCollectionViewCell.identifier)
         collectionView.dataSource = self
         collectionView.delegate = self
+        collectionView.showsVerticalScrollIndicator = false
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         return collectionView
     }()
     
+    private let loadView = LoadView()
+    
     private let categories = ["Все", "Фрукты", "Сухофрукты", "Зелень","Овощи", "Чай кофе", "Молочные продукты"]
     
-    var selectedCategoryIndex: String?
+    var selectedCategoryIndex: String? {
+        didSet {
+            setupData()
+        }
+    }
     
     private var products: [Product] = [] {
         didSet {
+            DispatchQueue.main.async {
+                self.productCollectionView.reloadData()
+            }
+        }
+    }
+    
+    private var filterProducts: [Product] = [] {
+        didSet {
+            setupCollectionViewWhenEmty()
             self.productCollectionView.reloadData()
         }
     }
+    
+    private var filter: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
-        let index = categories.firstIndex(where: {$0 == selectedCategoryIndex})
+    }
+    
+    private func setupSegment() {
+        customSegmentControl.delegate = self
+        let index = categories.firstIndex(where: { $0 == selectedCategoryIndex} )
         customSegmentControl.firstSelectedSegment(tag: index ?? 0)
     }
 
@@ -51,6 +104,7 @@ class ListProductViewController: UIViewController {
         setupView()
         setupConstraints()
         setupNavigationContoller()
+        setupSegment()
         setupData()
     }
     
@@ -64,10 +118,10 @@ class ListProductViewController: UIViewController {
         NSLayoutConstraint.activate([
             customSegmentControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             customSegmentControl.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
-            customSegmentControl.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
+            customSegmentControl.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
             customSegmentControl.heightAnchor.constraint(equalToConstant: 27),
             
-            productCollectionView.topAnchor.constraint(equalTo: customSegmentControl.bottomAnchor, constant: 24),
+            productCollectionView.topAnchor.constraint(equalTo: customSegmentControl.bottomAnchor, constant: 14),
             productCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             productCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             productCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
@@ -82,10 +136,15 @@ class ListProductViewController: UIViewController {
     
     private func setupData() {
         let categoryString = selectedCategoryIndex ?? ""
+        
         NetworkService.shared.fetchProducts(with: categoryString) { [weak self] result in
             guard let self = self else { return }
             self.fetchHandlerResult(result)
         }
+    }
+    
+    private func setupCollectionViewWhenEmty() {
+        productCollectionView.backgroundView = (filterProducts.isEmpty && filter) ? EmtyView() : nil
     }
     
     private func fetchHandlerResult(_ result: Result<[Product], TypeRequestError>) {
@@ -98,17 +157,24 @@ class ListProductViewController: UIViewController {
     }
 }
 
+//MARK: - CustomSegmentedControlDelegate
+extension ListProductViewController: CustomSegmentedControlDelegate {
+    func segmentTitle(title: String) {
+        selectedCategoryIndex = title
+    }
+}
+
 //MARK: - UICollectionViewDataSource
 extension ListProductViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        products.count
+        filter ? filterProducts.count : products.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ProductCollectionViewCell.identifier, for: indexPath) as? ProductCollectionViewCell else {
             return UICollectionViewCell()
         }
-        let model = products[indexPath.row]
+        let model = filter ? filterProducts[indexPath.row] : products[indexPath.row]
         cell.setupData(data: model)
         return cell
     }
@@ -122,10 +188,11 @@ extension ListProductViewController: UICollectionViewDelegate {
         static let countItem = 2.0
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //
+        //filterProducts = products.filter({$0.title.contains(sear)})
     }
 }
 
+//MARK: - UICollectionViewDelegateFlowLayout
 extension ListProductViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let itemSpacing = ConstantsSize.minimumLineSpacing
@@ -151,10 +218,31 @@ extension ListProductViewController: UICollectionViewDelegateFlowLayout {
 //MARK: - UISearchResultsUpdating
 extension ListProductViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        guard let text = searchController.searchBar.text else { return }
-        print(text)
+        guard let text = searchController.searchBar.text, text.isEmpty == false else {
+            self.filter = false
+            filterProducts = []
+            return
+        }
+        filter = true
+        //productCollectionView.backgroundView = LoadView()
+        self.filterProducts = self.products.filter({ $0.title.contains(text) })
+        
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+//            self.productCollectionView.backgroundView = nil
+//            self.filterProducts = self.products.filter({ $0.title.contains(text) })
+//        }
     }
 }
+
+//MARK: - UISearchControllerDelegate
+extension ListProductViewController: UISearchControllerDelegate {
+    func didPresentSearchController(_ searchController: UISearchController) {
+        if let cancelButton = searchController.searchBar.value(forKey: "cancelButton") as? UIButton {
+            cancelButton.setTitle("Отмена", for: .normal)
+        }
+    }
+}
+
 
 //MARK: - life cycle viewContoller methods
 extension ListProductViewController {
@@ -168,3 +256,4 @@ extension ListProductViewController {
         tabBarController?.tabBar.isHidden = false
     }
 }
+
