@@ -47,6 +47,7 @@
 		52C70FA92B2A6BBD00052FD1 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C70FA82B2A6BBD00052FD1 /* HomePresenter.swift */; };
 		52E232112B2F5194007CC631 /* ListProductPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E232102B2F5194007CC631 /* ListProductPresenter.swift */; };
 		52E232162B2F56FA007CC631 /* ListProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E232152B2F56FA007CC631 /* ListProductModel.swift */; };
+		52FE98622B35F46F00B028D5 /* EmtyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FE98612B35F46F00B028D5 /* EmtyView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +111,7 @@
 		52C70FA82B2A6BBD00052FD1 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		52E232102B2F5194007CC631 /* ListProductPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListProductPresenter.swift; sourceTree = "<group>"; };
 		52E232152B2F56FA007CC631 /* ListProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListProductModel.swift; sourceTree = "<group>"; };
+		52FE98612B35F46F00B028D5 /* EmtyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmtyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,7 +229,7 @@
 		52BC52B12B32C5BE00BCDE72 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
-				52BC52B22B32C5DA00BCDE72 /* CustomSegmentedControl.swift */,
+				52FE98612B35F46F00B028D5 /* EmtyView.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -503,6 +505,7 @@
 		52C70F892B2A4E4800052FD1 /* Customs */ = {
 			isa = PBXGroup;
 			children = (
+				52FE98602B35F45500B028D5 /* UISegmentControl */,
 				52BC52B12B32C5BE00BCDE72 /* UIView */,
 				52C70F8A2B2A4E5800052FD1 /* Cells */,
 			);
@@ -617,6 +620,14 @@
 				52E232152B2F56FA007CC631 /* ListProductModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		52FE98602B35F45500B028D5 /* UISegmentControl */ = {
+			isa = PBXGroup;
+			children = (
+				52BC52B22B32C5DA00BCDE72 /* CustomSegmentedControl.swift */,
+			);
+			path = UISegmentControl;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -781,6 +792,7 @@
 				52C70F932B2A54E100052FD1 /* APIEndpoints.swift in Sources */,
 				52C70F792B2A471F00052FD1 /* HistoryViewController.swift in Sources */,
 				52C70F8D2B2A4E8200052FD1 /* CategoryCollectionViewCell.swift in Sources */,
+				52FE98622B35F46F00B028D5 /* EmtyView.swift in Sources */,
 				524CF7002B2C4F19003B53DF /* TabBarPresenter.swift in Sources */,
 				524CF70B2B2C5B7F003B53DF /* ListProductViewController.swift in Sources */,
 				524CF6FE2B2C4EF7003B53DF /* TabBarPresenterProtocol.swift in Sources */,
