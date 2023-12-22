@@ -45,7 +45,7 @@ extension UIButton {
         let color = #colorLiteral(red: 0.8571347594, green: 0.8542680144, blue: 0.8668256402, alpha: 1)
         button.contentEdgeInsets = UIEdgeInsets(top: 0, left: 12, bottom: 0, right: 12)
         button.setTitleColor(color, for: .normal)
-        button.layer.cornerRadius = 15
+        button.layer.cornerRadius = 12
         button.layer.borderWidth = 1
         button.layer.borderColor = color.cgColor
         return button
