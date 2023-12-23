@@ -15,4 +15,5 @@ struct Product: Decodable {
     let image: String
     let quantity: Int
     let price: String
+    var count: Int? = 0
 }

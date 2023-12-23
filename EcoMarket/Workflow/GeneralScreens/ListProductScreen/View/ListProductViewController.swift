@@ -88,6 +88,8 @@ class ListProductViewController: UIViewController {
     }
     
     private var filter: Bool = false
+    
+    private var checkPrice = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -164,6 +166,30 @@ extension ListProductViewController: CustomSegmentedControlDelegate {
     }
 }
 
+//MARK: - ProductCollectionViewCellDelegate
+extension ListProductViewController: ProductCollectionViewCellDelegate {
+    func sendToBusket(count: Int, id: Int) {
+        if let index = products.firstIndex(where: { id ==  $0.id }) {
+            if products[index].count != nil {
+                products[index].count! += count
+            } else {
+                products[index].count = 1
+            }
+            busket()
+            //checkPrice = (products[index].count ?? 1) * Int((Double(products[index].price) ?? 1.0))
+        }
+    }
+    
+    func busket() {
+        let result = products.filter({ $0.count != nil })
+        var cost = 0
+        result.forEach({
+            cost += ($0.count ?? 1) * Int((Double($0.price) ?? 1.0))
+        })
+        print(cost)
+    }
+}
+
 //MARK: - UICollectionViewDataSource
 extension ListProductViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -176,6 +202,7 @@ extension ListProductViewController: UICollectionViewDataSource {
         }
         let model = filter ? filterProducts[indexPath.row] : products[indexPath.row]
         cell.setupData(data: model)
+        cell.delegate = self
         return cell
     }
 }
