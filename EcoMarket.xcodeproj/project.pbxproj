@@ -48,6 +48,9 @@
 		52E232112B2F5194007CC631 /* ListProductPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E232102B2F5194007CC631 /* ListProductPresenter.swift */; };
 		52E232162B2F56FA007CC631 /* ListProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E232152B2F56FA007CC631 /* ListProductModel.swift */; };
 		52FE98622B35F46F00B028D5 /* EmtyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FE98612B35F46F00B028D5 /* EmtyView.swift */; };
+		52FE98652B387E5E00B028D5 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FE98642B387E5E00B028D5 /* Order.swift */; };
+		52FE98682B387F3900B028D5 /* OrderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FE98672B387F3900B028D5 /* OrderItem.swift */; };
+		52FE986A2B387F8F00B028D5 /* OrderResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FE98692B387F8F00B028D5 /* OrderResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +115,9 @@
 		52E232102B2F5194007CC631 /* ListProductPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListProductPresenter.swift; sourceTree = "<group>"; };
 		52E232152B2F56FA007CC631 /* ListProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListProductModel.swift; sourceTree = "<group>"; };
 		52FE98612B35F46F00B028D5 /* EmtyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmtyView.swift; sourceTree = "<group>"; };
+		52FE98642B387E5E00B028D5 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		52FE98672B387F3900B028D5 /* OrderItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderItem.swift; sourceTree = "<group>"; };
+		52FE98692B387F8F00B028D5 /* OrderResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -557,6 +563,7 @@
 		52C70F952B2A560800052FD1 /* DTOs */ = {
 			isa = PBXGroup;
 			children = (
+				52FE98662B387F2B00B028D5 /* order */,
 				52C70F962B2A561D00052FD1 /* ProductCategory.swift */,
 				52C70F9B2B2A591E00052FD1 /* Product.swift */,
 			);
@@ -628,6 +635,16 @@
 				52BC52B22B32C5DA00BCDE72 /* CustomSegmentedControl.swift */,
 			);
 			path = UISegmentControl;
+			sourceTree = "<group>";
+		};
+		52FE98662B387F2B00B028D5 /* order */ = {
+			isa = PBXGroup;
+			children = (
+				52FE98642B387E5E00B028D5 /* Order.swift */,
+				52FE98672B387F3900B028D5 /* OrderItem.swift */,
+				52FE98692B387F8F00B028D5 /* OrderResponse.swift */,
+			);
+			path = order;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -775,6 +792,7 @@
 				52BC52AD2B32C29600BCDE72 /* ProductCollectionViewCell.swift in Sources */,
 				52C70F3A2B2A41E400052FD1 /* EcoMarket.xcdatamodeld in Sources */,
 				52C70FA52B2A67F800052FD1 /* UIImageView + extension.swift in Sources */,
+				52FE986A2B387F8F00B028D5 /* OrderResponse.swift in Sources */,
 				52C70FA92B2A6BBD00052FD1 /* HomePresenter.swift in Sources */,
 				52C70F9C2B2A591E00052FD1 /* Product.swift in Sources */,
 				52C70FA72B2A69F500052FD1 /* HomeModel.swift in Sources */,
@@ -794,7 +812,9 @@
 				52C70F8D2B2A4E8200052FD1 /* CategoryCollectionViewCell.swift in Sources */,
 				52FE98622B35F46F00B028D5 /* EmtyView.swift in Sources */,
 				524CF7002B2C4F19003B53DF /* TabBarPresenter.swift in Sources */,
+				52FE98652B387E5E00B028D5 /* Order.swift in Sources */,
 				524CF70B2B2C5B7F003B53DF /* ListProductViewController.swift in Sources */,
+				52FE98682B387F3900B028D5 /* OrderItem.swift in Sources */,
 				524CF6FE2B2C4EF7003B53DF /* TabBarPresenterProtocol.swift in Sources */,
 				52C70F972B2A561D00052FD1 /* ProductCategory.swift in Sources */,
 				52BC52B32B32C5DA00BCDE72 /* CustomSegmentedControl.swift in Sources */,

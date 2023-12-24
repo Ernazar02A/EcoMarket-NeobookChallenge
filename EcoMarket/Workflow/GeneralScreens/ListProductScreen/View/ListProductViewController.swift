@@ -7,12 +7,20 @@
 
 import UIKit
 
-class LoadView: UIView {
-    private var activityIndicator: UIActivityIndicatorView = {
-        let view = UIActivityIndicatorView(style: .large)
+class BusketView: UIView {
+    private let busketImageView: UIImageView = {
+        let view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.color = .mainGreen
+        view.image = UIImage(named: "busket")?.withTintColor(.white)
         view.startAnimating()
+        return view
+    }()
+    
+    private let busketTitleLabel: UILabel = {
+        let view = UILabel()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.textColor = .white
+        view.font = .systemFont(ofSize: 16, weight: .medium)
         return view
     }()
     
@@ -20,21 +28,42 @@ class LoadView: UIView {
         super.init(frame: frame)
         setup()
     }
+
+    private func setup() {
+        setupView()
+        setupConstraints()
+    }
+    
+    private func setupView() {
+        translatesAutoresizingMaskIntoConstraints = false
+        isHidden = true
+        backgroundColor = .mainGreen
+        layer.cornerRadius = 25
+        
+        addSubview(busketImageView)
+        addSubview(busketTitleLabel)
+    }
+    
+    private func setupConstraints() {
+        NSLayoutConstraint.activate([
+            busketImageView.centerYAnchor.constraint(equalTo: centerYAnchor),
+            busketImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            busketImageView.widthAnchor.constraint(equalToConstant: 24),
+            busketImageView.heightAnchor.constraint(equalToConstant: 24),
+            
+            busketTitleLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
+            busketTitleLabel.leadingAnchor.constraint(equalTo: busketImageView.trailingAnchor, constant: 6),
+        ])
+    }
+    
+    func setupPrice(price: Int) {
+        busketTitleLabel.text = "Корзина \(price) c"
+    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setup() {
-        addSubview(activityIndicator)
-        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
-        activityIndicator.isHidden = false
-        backgroundColor = .white
-        NSLayoutConstraint.activate([
-            activityIndicator.centerXAnchor.constraint(equalTo: centerXAnchor),
-            activityIndicator.centerYAnchor.constraint(equalTo: centerYAnchor),
-        ])
-    }
 }
 
 class ListProductViewController: UIViewController {
@@ -62,7 +91,7 @@ class ListProductViewController: UIViewController {
         return collectionView
     }()
     
-    private let loadView = LoadView()
+    private let busketView = BusketView()
     
     private let categories = ["Все", "Фрукты", "Сухофрукты", "Зелень","Овощи", "Чай кофе", "Молочные продукты"]
     
@@ -114,6 +143,7 @@ class ListProductViewController: UIViewController {
         view.backgroundColor = .white
         view.addSubview(productCollectionView)
         view.addSubview(customSegmentControl)
+        view.addSubview(busketView)
     }
     
     private func setupConstraints() {
@@ -127,6 +157,11 @@ class ListProductViewController: UIViewController {
             productCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             productCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             productCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            
+            busketView.heightAnchor.constraint(equalToConstant: 48),
+            busketView.widthAnchor.constraint(equalToConstant: 168),
+            busketView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            busketView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50),
         ])
     }
     
@@ -176,7 +211,6 @@ extension ListProductViewController: ProductCollectionViewCellDelegate {
                 products[index].count = 1
             }
             busket()
-            //checkPrice = (products[index].count ?? 1) * Int((Double(products[index].price) ?? 1.0))
         }
     }
     
@@ -186,7 +220,12 @@ extension ListProductViewController: ProductCollectionViewCellDelegate {
         result.forEach({
             cost += ($0.count ?? 1) * Int((Double($0.price) ?? 1.0))
         })
-        print(cost)
+        if cost == 0 {
+            busketView.isHidden = true
+        } else {
+            busketView.isHidden = false
+            busketView.setupPrice(price: cost)
+        }
     }
 }
 
@@ -251,13 +290,7 @@ extension ListProductViewController: UISearchResultsUpdating {
             return
         }
         filter = true
-        //productCollectionView.backgroundView = LoadView()
         self.filterProducts = self.products.filter({ $0.title.contains(text) })
-        
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-//            self.productCollectionView.backgroundView = nil
-//            self.filterProducts = self.products.filter({ $0.title.contains(text) })
-//        }
     }
 }
 

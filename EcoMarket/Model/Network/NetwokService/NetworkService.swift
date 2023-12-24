@@ -29,7 +29,7 @@ class NetworkService {
     let url = APIEndpoints.self
     let manager = NetworkManager.shared
     func fetchCategory(completion: @escaping (Result<[ProductCategory], TypeRequestError>) -> Void) {
-        guard let request = NetworkManager.shared.createRequest(typeRequest: .get, url: url.getProductCategorysUrl, token: nil, parameters: nil) else {
+        guard let request = NetworkManager.shared.createRequest(typeRequest: .get, url: url.getProductCategorysUrl, token: nil, parameters: nil, body: nil) else {
             completion(.failure(.requestNil))
             return
         }
@@ -38,12 +38,28 @@ class NetworkService {
     }
     
     func fetchProducts(with category: String, completion: @escaping (Result<[Product], TypeRequestError>) -> Void) {
-        guard let request = NetworkManager.shared.createRequest(typeRequest: .get, url: url.getProductsUrl(category), token: nil, parameters: nil) else {
+        guard let request = NetworkManager.shared.createRequest(typeRequest: .get, url: url.getProductsUrl(category), token: nil, parameters: nil, body: nil) else {
             completion(.failure(.requestNil))
             return
         }
         
         self.request(request: request, decodeType: [Product].self, completion: completion)
+    }
+    
+    func createOrder(with order: Order, completion: @escaping (Result<OrderResponse, TypeRequestError>) -> Void) {
+        let o = Order(products: [.init(product: 1, quantity: 12)], phoneNumber: "123456", address: "Bishkek", referencePoint: "12345", comments: "text")
+        var body: Data? = nil
+        do {
+            body = try encoder.encode(o)
+        } catch {
+            completion(.failure(.encodeError(error)))
+        }
+        guard let request = NetworkManager.shared.createRequest(typeRequest: .post, url: url.createOrder, token: nil, parameters: nil, body: body) else {
+            completion(.failure(.requestNil))
+            return
+        }
+        
+        self.request(request: request, decodeType: OrderResponse.self, completion: completion)
     }
     
     private func request<T: Decodable>(request: URLRequest, decodeType: T.Type, completion: @escaping (Result<T, TypeRequestError>) -> Void) {
@@ -62,21 +78,28 @@ class NetworkService {
                 completion(.failure(.dataNil))
                 return
             }
-            
-            switch httpResponse.statusCode {
-            case 200:
-                do {
-                    let model = try self.decoder.decode(decodeType.self, from: data)
-                    completion(.success(model))
-                    return
-                } catch {
-                    completion(.failure(.decodeError(error)))
-                    return
-                }
-            default :
-                completion(.failure(.errorStatusCode(httpResponse.statusCode)))
-                return
-            }
+            self.handleStatusCode(data: data, statusCode: httpResponse.statusCode, decodeType: decodeType, completion: completion)
         }.resume()
+    }
+    
+    private func handleStatusCode<T: Decodable>(data: Data, statusCode: Int, decodeType: T.Type, completion: @escaping (Result<T, TypeRequestError>) -> Void) {
+        switch statusCode{
+        case let successStatus where successStatus == 200 || successStatus == 201:
+            handleSuccesStatus(data: data, decodeType: decodeType, completion: completion)
+        default :
+            completion(.failure(.errorStatusCode(statusCode)))
+            return
+        }
+    }
+    
+    private func handleSuccesStatus<T: Decodable>(data: Data, decodeType: T.Type, completion: @escaping (Result<T, TypeRequestError>) -> Void) {
+        do {
+            let model = try decoder.decode(decodeType.self, from: data)
+            completion(.success(model))
+            return
+        } catch {
+            completion(.failure(.decodeError(error)))
+            return
+        }
     }
 }

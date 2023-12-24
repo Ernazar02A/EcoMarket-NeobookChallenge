@@ -19,4 +19,6 @@ struct APIEndpoints {
         }
         return baseUrl + "product-list/?category_name=" + encodedCategory
     }
+    
+    static let createOrder = baseUrl + "order-create/"
 }
