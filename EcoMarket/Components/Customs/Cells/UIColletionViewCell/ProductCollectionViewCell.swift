@@ -139,16 +139,20 @@ class ProductCollectionViewCell: UICollectionViewCell {
     
     private func checkCount(count: Int?) {
         if count == nil || count == 0 {
-            self.addButtonView.isHidden = false
-            self.plusButtonView.isHidden = true
-            self.minusButtonView.isHidden = true
-            self.countLabel.isHidden = true
+            addButtonView.isHidden = false
+            plusButtonView.isHidden = true
+            minusButtonView.isHidden = true
+            countLabel.isHidden = true
         } else {
-            self.addButtonView.isHidden = true
-            self.plusButtonView.isHidden = false
-            self.minusButtonView.isHidden = false
-            self.countLabel.isHidden = false
+            addButtonView.isHidden = true
+            plusButtonView.isHidden = false
+            minusButtonView.isHidden = false
+            countLabel.isHidden = false
         }
+        
+//        else if count == 50 {
+//            self.plusButtonView.isEnabled = true
+//        }
     }
     override func prepareForReuse() {
         super.prepareForReuse()
