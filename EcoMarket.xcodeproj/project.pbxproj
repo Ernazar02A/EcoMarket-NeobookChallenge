@@ -52,6 +52,7 @@
 		52FE98682B387F3900B028D5 /* OrderItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FE98672B387F3900B028D5 /* OrderItem.swift */; };
 		52FE986A2B387F8F00B028D5 /* OrderResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FE98692B387F8F00B028D5 /* OrderResponse.swift */; };
 		52FE986C2B38A37C00B028D5 /* BusketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FE986B2B38A37C00B028D5 /* BusketView.swift */; };
+		52FE98B52B3B48E400B028D5 /* DetailsProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FE98B42B3B48E300B028D5 /* DetailsProductViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +121,7 @@
 		52FE98672B387F3900B028D5 /* OrderItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderItem.swift; sourceTree = "<group>"; };
 		52FE98692B387F8F00B028D5 /* OrderResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderResponse.swift; sourceTree = "<group>"; };
 		52FE986B2B38A37C00B028D5 /* BusketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusketView.swift; sourceTree = "<group>"; };
+		52FE98B42B3B48E300B028D5 /* DetailsProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsProductViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -619,6 +621,7 @@
 		52E232132B2F51AF007CC631 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				52FE98B32B3B48BE00B028D5 /* general */,
 				524CF70A2B2C5B7F003B53DF /* ListProductViewController.swift */,
 			);
 			path = View;
@@ -648,6 +651,14 @@
 				52FE98692B387F8F00B028D5 /* OrderResponse.swift */,
 			);
 			path = order;
+			sourceTree = "<group>";
+		};
+		52FE98B32B3B48BE00B028D5 /* general */ = {
+			isa = PBXGroup;
+			children = (
+				52FE98B42B3B48E300B028D5 /* DetailsProductViewController.swift */,
+			);
+			path = general;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -821,6 +832,7 @@
 				524CF6FE2B2C4EF7003B53DF /* TabBarPresenterProtocol.swift in Sources */,
 				52C70F972B2A561D00052FD1 /* ProductCategory.swift in Sources */,
 				52BC52B32B32C5DA00BCDE72 /* CustomSegmentedControl.swift in Sources */,
+				52FE98B52B3B48E400B028D5 /* DetailsProductViewController.swift in Sources */,
 				524CF7042B2C4F91003B53DF /* TabBarProtocol.swift in Sources */,
 				52C70F7E2B2A473C00052FD1 /* InfoViewController.swift in Sources */,
 				52FE986C2B38A37C00B028D5 /* BusketView.swift in Sources */,
