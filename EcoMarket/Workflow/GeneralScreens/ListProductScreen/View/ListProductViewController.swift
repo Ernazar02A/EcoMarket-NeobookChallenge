@@ -195,7 +195,10 @@ extension ListProductViewController: UICollectionViewDelegate {
         static let countItem = 2.0
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //filterProducts = products.filter({$0.title.contains(sear)})
+        let vc = DetailsProductViewController(product: products[indexPath.row])
+        vc.modalPresentationStyle = .overFullScreen
+        vc.delegate = self
+        present(vc, animated: true)
     }
 }
 
